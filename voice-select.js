@@ -4,6 +4,11 @@
 //
 
 //
+// Dependencies
+//
+var voices      = require('./voices');
+
+//
 // Constants
 //
 var SCROLL_DISTANCE = 10;
@@ -22,7 +27,7 @@ function VoiceSelect (host, controls, sequencer, display) {
 
     this.controls.on('rowSelectPress', function (row) {
         if (self.pressedRow !== -1) return;
-        self.display.setPitch(self.seq.voices[row]);
+        self.display.setPitch(voices.voice(row));
         self.display.showPitch();
         self.pressedRow = row;
         self.scrollDelta = 0;
@@ -30,7 +35,7 @@ function VoiceSelect (host, controls, sequencer, display) {
 
     this.controls.on('rowSelectRelease', function (row) {
         if (row !== self.pressedRow) return;
-        self.seq.voices[row] = self.display.pitch;
+        voices.setVoice(row, self.display.pitch);
         self.display.hidePitch();
         self.pressedRow = -1;
     });
