@@ -1,0 +1,11 @@
+{
+  "name": "apc40seq",
+  "version": "0.0.1",
+  "description": "Interactive APC40 pattern sequencer",
+  "main": "app.js",
+  "dependencies": {
+    "midi": "^0.9.0"
+  },
+  "author": "Kael Barton <kaelb@me.com>",
+  "license": "MIT"
+}
