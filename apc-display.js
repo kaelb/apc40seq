@@ -243,7 +243,7 @@ APCDisplay.prototype.showPitch = function () {
 };
 
 APCDisplay.prototype.hidePitch = function () {
-    displaySequence(this.apc, this.sequence, this.step);
+    displaySequence(this.apc, this.sequence, this.step, this.frame);
     this.displayingPitch = false;
 };
 
