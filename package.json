@@ -4,7 +4,8 @@
   "description": "Interactive APC40 pattern sequencer",
   "main": "app.js",
   "dependencies": {
-    "midi": "^0.9.0"
+    "midi": "^0.9.0",
+    "minimist": "^1.1.0"
   },
   "author": "Kael Barton <kaelb@me.com>",
   "license": "MIT"

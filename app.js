@@ -5,7 +5,8 @@
 //
 // Dependencies
 //
-var midi    = require('midi');
+var midi        = require('midi');
+var minimist    = require('minimist');
 
 var md      = require('./mdevent');
 var Host    = require('./host');
@@ -19,7 +20,12 @@ var VoiceSelect = require('./voice-select');
 //
 // Setup
 //
-var apc = new APC40(0);
+
+// get APC40 port from arguments (default is 0)
+var argv = minimist(process.argv.slice(2));
+var port = ('p' in argv) ? argv.p : 0;
+
+var apc = new APC40(port);
 var display = new APCDisplay(apc);
 var controls = new APCControls(apc);
 
