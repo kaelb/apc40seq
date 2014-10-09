@@ -19,7 +19,7 @@ var VoiceSelect = require('./voice-select');
 //
 // Setup
 //
-var apc = new APC40();
+var apc = new APC40(0);
 var display = new APCDisplay(apc);
 var controls = new APCControls(apc);
 

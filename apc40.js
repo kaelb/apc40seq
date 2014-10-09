@@ -13,14 +13,14 @@ var midi    = require('midi');
 var md      = require('./mdevent');
 
 
-function APC40 () {
+function APC40 (port) {
     events.EventEmitter.call(this);
 
     this.output = new midi.output();
-    this.output.openPort(0);
+    this.output.openPort(port);
 
     this.input = new midi.input();
-    this.input.openPort(0);
+    this.input.openPort(port);
 
     var self = this;
 
